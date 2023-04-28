@@ -72,7 +72,8 @@ parser.add_argument('scale', type=werkzeug.datastructures.Accept, required=True)
 class SegmentationModel:
     def __init__(self):
         self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-        self.image_processor = AutoImageProcessor.from_pretrained("nvidia/mit-b5", size={'height': 960, 'width': 960}, reduce_labels=True)
+        self.image_processor = AutoImageProcessor.from_pretrained("nvidia/mit-b5", size={'height': 1008, 'width': 1344},
+                                                                  reduce_labels=True)
         self.model = AutoModelForSemanticSegmentation.from_pretrained("segformer-b5/checkpoint-13000").to(self.device)
     
     def __call__(self, image):
