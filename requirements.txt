@@ -1,0 +1,13 @@
+sacrebleu
+numpy
+pandas
+datasets
+transformers
+evaluate
+torch
+json
+tqdm
+pillow
+opencv
+flask
+flask_restful
